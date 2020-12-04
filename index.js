@@ -78,6 +78,7 @@ inquirer.prompt([
     let hasQuestionDetails = (githubUsername || githubProfileLink || email) && (githubUsername.length + githubProfileLink.length + email.length);
 
     let text = `${ title&&title.length?title + "\n====\n":"" }
+${license&&license.length?licenser.getBadge(license)+"\n":""}
 ${description&&description.length?"Description\n---\n"+description:""}
 
 __TOC__
@@ -86,7 +87,7 @@ ${installation&&installation.length?"Installation\n---\n"+installation:""}
 
 ${usage&&usage.length?"Usage\n---\n"+usage:""}
 
-${license&&license.length?"License\n---\n"+license:""}
+${license&&license.length?"License\n---\n"+licenser.getText(license):""}
 
 ${contribution&&contribution.length?"Contribution\n---\n"+contribution:""}
 
