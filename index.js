@@ -13,10 +13,6 @@ inquirer.prompt([
         message: "Your Github username?"
     },
     {
-        name: "githubProfileLink",
-        message: "Link to your Github profile?"
-    },
-    {
         name: "email",
         message: "Your email to be reached?"
     },
@@ -75,7 +71,7 @@ inquirer.prompt([
 
     } = answers;
 
-    let hasQuestionDetails = (githubUsername || githubProfileLink || email) && (githubUsername.length + githubProfileLink.length + email.length);
+    let hasQuestionDetails = (githubUsername || email) && (githubUsername.length + email.length);
 
     let text = `${ title&&title.length?title + "\n====\n":"" }
 ${license&&license.length?licenser.getBadge(license)+"\n":""}
@@ -94,8 +90,7 @@ ${contribution&&contribution.length?"Contribution\n---\n"+contribution:""}
 ${tests&&tests.length?"Tests\n---\n"+tests:""}
 
 ${ hasQuestionDetails?"Questions\n---\n":""}
-${ githubUsername&&githubUsername.length?"- What is your Github username?\n\t- It is: "+githubUsername+"\n":"" }
-${ githubProfileLink&&githubProfileLink.length?"\n- Where can I see more of your repositories?\n\t- Click here: ["+githubProfileLink+"]("+githubProfileLink+")\n":"" }
+${ githubUsername&&githubUsername.length?"\n- Where can I see more of your repositories?\n\t- Visit ["+githubUsername+"'s Repositories](https://github.com/"+githubUsername+")\n":"" }
 ${ email&&email.length?"\n- Where can I reach you?\n\t- You can reach me with additional questions at <a href='mailto:"+email+"'>"+email+"</a>.\n":"" }`;
 
     // text = text.replace(/\n\n/gm, "\n");
