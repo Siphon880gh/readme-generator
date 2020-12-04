@@ -103,7 +103,7 @@ ${ email&&email.length?"\n- Where can I reach you?\n\t- You can reach me with ad
 
     text = addTableOfContents(text, description, installation, usage, license, contribution, tests, hasQuestionDetails);
 
-    const filename = "README.md";
+    const filename = "Generated-README.md";
     fs.writeFileSync(filename, text);
 
     console.group("README Generator");
