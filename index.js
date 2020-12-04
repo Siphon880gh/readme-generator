@@ -1,7 +1,7 @@
 const fs = require("fs");
-const inquire = require("inquirer");
+const inquirer = require("inquirer");
 
-inquire.prompt([
+inquirer.prompt([
 
     // Basics
     {
@@ -36,6 +36,20 @@ inquire.prompt([
         message: "Enter usage information if any:"
     },
     {
+        name: "license",
+        choices: [
+            new inquirer.Separator(),
+            "apache2", "bsd2", "bsd3",
+            new inquirer.Separator(),
+            "cc0", "cc1", "cc4-international", "cc4-sharealike", "cc4-noncommercial", "cc4-noncommercial-sharealike", "cc4-noncommercial-noderivatives",
+            new inquirer.Separator(),
+            "EPL1", "GPLv2", "GPLv3",
+            new inquirer.Separator(),
+            "IBM", "MIT", "Mozilla"
+        ],
+        type: 'list'
+    },
+    {
         name: "contribution",
         message: "Enter contribution guidelines if any:"
     },
@@ -55,18 +69,11 @@ inquire.prompt([
         description,
         installation,
         usage,
+        license,
         contribution,
         tests
 
     } = answers;
-
-    let license = "lic";
-    // let license = {
-    //     mit: {
-    //         badge: "",
-    //         notice: ""
-    //     }
-    // }
 
     let hasQuestionDetails = (githubUsername || githubProfileLink || email) && (githubUsername.length + githubProfileLink.length + email.length);
 
