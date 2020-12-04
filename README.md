@@ -1,49 +1,39 @@
-a
+ReadMe Generator
 ====
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Description
 ---
-y
+This is a README generator from command line.
 
 Table of Contents
 ---
 - [Description](#description)
 - [Installation](#installation)
-- [Usage](#usage)
 - [License](#license)
 - [Contribution](#contribution)
-- [Tests](#tests)
 - [Questions](#questions)
 
 
 Installation
 ---
-b
-
-Usage
----
-n
+Clone repository. Install inquirer. Run index.js: `node index.js`.
 
 License
 ---
-[Apache 2.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/apache-2.0.txt)
+[MIT License](https://opensource.org/licenses/MIT)
 
 Contribution
 ---
-a
-
-Tests
----
-d
+Open to suggestions on new features.
 
 Questions
 ---
 
 - What is your Github username?
-	- It is: w
+	- It is: Siphon880gh
 - Where can I see more of your repositories?
-	- Click here: [e](e)
+	- Click here: [https://github.com/Siphon880gh](https://github.com/Siphon880gh)
 - Where can I reach you?
-	- You can reach me with additional questions at <a href='mailto:tr'>tr</a>.
+	- You can reach me with additional questions at <a href='mailto:weffung@ucdavis.edu'>weffung@ucdavis.edu</a>.
