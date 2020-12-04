@@ -94,9 +94,9 @@ ${contribution&&contribution.length?"Contribution\n---\n"+contribution:""}
 ${tests&&tests.length?"Tests\n---\n"+tests:""}
 
 ${ hasQuestionDetails?"Questions\n---\n":""}
-${ githubUsername&&githubUsername.length?"- What is your Github username?\n - "+githubUsername+"\n":"" }
-${ githubProfileLink&&githubProfileLink.length?"- Where can I see more of your repositories?\n - ["+githubProfileLink+"]("+githubProfileLink+")\n":"" }
-${ email&&email.length?"- Where can I reach you?\n - You can reach me with additional questions at <a href='mailto:"+email+"'>"+email+"</a>.\n":"" }`;
+${ githubUsername&&githubUsername.length?"- What is your Github username?\n\t- It is: "+githubUsername+"\n":"" }
+${ githubProfileLink&&githubProfileLink.length?"\n- Where can I see more of your repositories?\n\t- Click here: ["+githubProfileLink+"]("+githubProfileLink+")\n":"" }
+${ email&&email.length?"\n- Where can I reach you?\n\t- You can reach me with additional questions at <a href='mailto:"+email+"'>"+email+"</a>.\n":"" }`;
 
     // text = text.replace(/\n\n/gm, "\n");
     text = text.replace(/\n\n\n/gm, "\n");

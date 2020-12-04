@@ -1,11 +1,11 @@
-README Generator
+a
 ====
 
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Description
 ---
-desc
+y
 
 Table of Contents
 ---
@@ -20,32 +20,30 @@ Table of Contents
 
 Installation
 ---
-installation1
+b
 
 Usage
 ---
-usage1
+n
 
 License
 ---
-[CC 4.0 Share Alike](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cc-by-4.0.txt)
+[Apache 2.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/apache-2.0.txt)
 
 Contribution
 ---
-contribution1
+a
 
 Tests
 ---
-test1
+d
 
 Questions
 ---
 
 - What is your Github username?
- - Siphon880gh
-
+	- It is: w
 - Where can I see more of your repositories?
- - [https://github.com/Siphon880gh](https://github.com/Siphon880gh)
-
+	- Click here: [e](e)
 - Where can I reach you?
- - You can reach me with additional questions at <a href='mailto:weffung@ucdavis.edu'>weffung@ucdavis.edu</a>.
+	- You can reach me with additional questions at <a href='mailto:tr'>tr</a>.
