@@ -143,8 +143,8 @@ function addTableOfContents(text, description, installation, usage, license, con
  * @method getText Returns license link
  * @method getBadge Returns badge image
  * @description
- * License links are from https://github.com/github/choosealicense.com/tree/gh-pages/_licenses
- * License badges are from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+ * License badges and links are from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+ * Alternative license links at https://github.com/github/choosealicense.com/tree/gh-pages/_licenses
  * 
  */
 let licenser = {
@@ -152,50 +152,50 @@ let licenser = {
     getText: (license) => {
         switch (license) {
             case "apache2":
-                return "[Apache 2.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/apache-2.0.txt)";
+                return "[Apache 2.0](https://opensource.org/licenses/Apache-2.0)";
                 break;
             case "bsd2":
-                return "[BSD2](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/bsd-2-clause.txt)";
+                return "[BSD2](https://opensource.org/licenses/BSD-2-Clause)";
                 break;
             case "bsd3":
-                return "[BSD3](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/bsd-3-clause.txt)";
+                return "[BSD3](https://opensource.org/licenses/BSD-3-Clause)";
                 break;
 
                 // --
 
             case "cc1":
-                return "[CC 1.0 License](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cc0-1.0.txt)";
+                return "[CC 1.0 License](http://creativecommons.org/publicdomain/zero/1.0/)";
                 break;
             case "cc4-international":
-                return "[CC 4.0 International](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cc-by-4.0.txt)";
+                return "[CC 4.0 International](https://creativecommons.org/licenses/by/4.0/)";
                 break;
             case "cc4-sharealike":
-                return "[CC 4.0 Share Alike](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/cc-by-4.0.txt)";
+                return "[CC 4.0 Share Alike](https://creativecommons.org/licenses/by-sa/4.0/)";
                 break;
 
                 // --
 
             case "EPL1":
-                return "[ELP 1.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/epl-1.0.txt)";
+                return "[ELP 1.0](https://opensource.org/licenses/EPL-1.0)";
                 break;
             case "GNU GPLv2":
-                return "[GNU General Public License v2.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/gpl-2.0.txt)";
+                return "[GNU General Public License v2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)";
                 break;
             case "GNU GPLv3":
-                return "[GNU General Public License v3.0](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/gpl-3.0.txt)";
+                return "[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0)";
                 break;
 
                 // --
 
             case "MIT":
-                return "[MIT License](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/mit.txt)";
+                return "[MIT License](https://opensource.org/licenses/MIT)";
                 break;
             case "Unlicense":
-                return "[Unlicense](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/unlicense.txt)";
+                return "[Unlicense](http://unlicense.org/)";
                 break;
 
             default:
-                return "error-license-badge-not-found";
+                return "error-license-link-not-found";
         }
     },
     getBadge: (license) => {
@@ -231,7 +231,7 @@ let licenser = {
                 return "[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)";
                 break;
             case "GNU GPLv3":
-                return "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)";
+                return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
                 break;
 
                 // --
