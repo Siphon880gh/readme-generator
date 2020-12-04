@@ -88,6 +88,9 @@ ${ githubUsername&&githubUsername.length?"- What is your Github username?\n - "+
 ${ githubProfileLink&&githubProfileLink.length?"- Where can I see more of your repositories?\n - ["+githubProfileLink+"]("+githubProfileLink+")\n":"" }
 ${ email&&email.length?"- Where can I reach you?\n - You can reach me with additional questions at <a href='mailto:"+email+"'>"+email+"</a>.\n":"" }`;
 
+    // text = text.replace(/\n\n/gm, "\n");
+    text = text.replace(/\n\n\n/gm, "\n");
+
     // fs.writeFileSync(filename, text);
     console.log(text);
 
