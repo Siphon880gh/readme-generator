@@ -73,6 +73,8 @@ inquire.prompt([
     let text = `${ title&&title.length?title + "\n====\n":"" }
 ${description&&description.length?"Description\n---\n"+description:""}
 
+__TOC__
+
 ${installation&&installation.length?"Installation\n---\n"+installation:""}
 
 ${usage&&usage.length?"Usage\n---\n"+usage:""}
@@ -91,9 +93,35 @@ ${ email&&email.length?"- Where can I reach you?\n - You can reach me with addit
     // text = text.replace(/\n\n/gm, "\n");
     text = text.replace(/\n\n\n/gm, "\n");
 
+    text = addTableOfContents(text, description, installation, usage, license, contribution, tests, hasQuestionDetails);
+
     // fs.writeFileSync(filename, text);
     console.log(text);
 
 }).catch(err => {
     console.log("Error: ", err);
 });
+
+function addTableOfContents(text, description, installation, usage, license, contribution, tests, hasQuestionDetails) {
+    let toc = "";
+
+    if (description && description.length)
+        toc += "- [Description](#description)\n";
+    if (installation && installation.length)
+        toc += "- [Installation](#installation)\n";
+    if (usage && usage.length)
+        toc += "- [Usage](#usage)\n";
+    if (license && license.length)
+        toc += "- [License](#license)\n";
+    if (contribution && contribution.length)
+        toc += "- [Contribution](#contribution)\n";
+    if (tests && tests.length)
+        toc += "- [Tests](#tests)\n";
+    if (hasQuestionDetails)
+        toc += "- [Questions](#questions)\n";
+
+    if (toc.length) toc = "Table of Contents\n---\n" + toc;
+    text = text.replace(/__TOC__/, toc);
+
+    return text;
+}
