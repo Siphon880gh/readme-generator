@@ -103,8 +103,12 @@ ${ email&&email.length?"- Where can I reach you?\n - You can reach me with addit
 
     text = addTableOfContents(text, description, installation, usage, license, contribution, tests, hasQuestionDetails);
 
-    // fs.writeFileSync(filename, text);
-    console.log(text);
+    const filename = "README.md";
+    fs.writeFileSync(filename, text);
+
+    console.group("README Generator");
+    console.log(`Written to ${filename}:\n${text}`);
+    console.groupEnd();
 
 }).catch(err => {
     console.log("Error: ", err);
