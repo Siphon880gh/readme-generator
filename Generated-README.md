@@ -1,21 +1,36 @@
-Repository
+name
 ====
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+Description
+---
+desc
 
 Table of Contents
 ---
+- [Description](#description)
 - [License](#license)
+- [Contribution](#contribution)
+- [Tests](#tests)
 - [Questions](#questions)
 
 
 License
 ---
-[Apache 2.0](https://opensource.org/licenses/Apache-2.0)
+[BSD3](https://opensource.org/licenses/BSD-3-Clause)
+
+Contribution
+---
+guidelines
+
+Tests
+---
+test
 
 Questions
 ---
 - Where can I see more of your repositories?
-	- Visit [Siphon880gh's Repositories](https://github.com/Siphon880gh)
+	- Visit [user's Repositories](https://github.com/user)
 - Where can I reach you?
-	- You can reach me with additional questions at <a href='mailto:weffung@ucdavis.edu'>weffung@ucdavis.edu</a>.
+	- You can reach me with additional questions at <a href='mailto:email@email.com'>email@email.com</a>.

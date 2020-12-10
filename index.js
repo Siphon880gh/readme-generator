@@ -1,9 +1,17 @@
+/**
+ * @file index.js
+ * Node script
+ * @require File System module
+ * @require inquirer - commond line user interface so you can ask user questions and accept their inputs 
+ * 
+ */
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-inquirer.prompt([
+// Questions to ask the README generator user
+const questions = [
 
-    // Basics
+    // Basic Questions
     {
         name: "title",
         message: "Name of your repository?"
@@ -18,7 +26,7 @@ inquirer.prompt([
     },
 
 
-    // Sections
+    // ReadMe Sections
     {
         name: "description",
         message: "Enter a description if any:"
@@ -31,6 +39,9 @@ inquirer.prompt([
         name: "usage",
         message: "Enter usage information if any:"
     },
+
+    // License question
+    // Is in multiple choice format
     {
         name: "license",
         choices: [
@@ -53,8 +64,16 @@ inquirer.prompt([
         name: "tests",
         message: "Enter test instructions if any:"
     }
+];
 
-]).then(answers => {
+/**
+ * 
+ * @callback
+ * Handles the answers after user responds to questions
+ * The result is a generated read me file called "Generated-README.md"
+ *  
+ */
+const generateReadMe = answers => {
 
     let {
         title,
@@ -74,7 +93,7 @@ inquirer.prompt([
     let hasQuestionDetails = (githubUsername || email) && (githubUsername.length + email.length);
 
     let text = `${ title&&title.length?title + "\n====\n":"" }
-${license&&license.length?licenser.getBadge(license)+"\n":""}
+${license&&license.length?helpers.getLicenseBadge(license)+"\n":""}
 ${description&&description.length?"Description\n---\n"+description:""}
 
 __TOC__
@@ -83,7 +102,7 @@ ${installation&&installation.length?"Installation\n---\n"+installation:""}
 
 ${usage&&usage.length?"Usage\n---\n"+usage:""}
 
-${license&&license.length?"License\n---\n"+licenser.getText(license):""}
+${license&&license.length?"License\n---\n"+helpers.getLicenseText(license):""}
 
 ${contribution&&contribution.length?"Contribution\n---\n"+contribution:""}
 
@@ -105,9 +124,17 @@ ${ email&&email.length?"\n- Where can I reach you?\n\t- You can reach me with ad
     console.log(`Written to ${filename}:\n${text}`);
     console.groupEnd();
 
-}).catch(err => {
+};
+
+const catchError = err => {
     console.log("Error: ", err);
-});
+}
+
+// Use Inquirer API that takes your questions, a callback to handle the questions, and a callback to handle errors
+inquirer
+    .prompt(questions)
+    .then(generateReadMe)
+    .catch(catchError);
 
 function addTableOfContents(text, description, installation, usage, license, contribution, tests, hasQuestionDetails) {
     let toc = "";
@@ -134,17 +161,15 @@ function addTableOfContents(text, description, installation, usage, license, con
 }
 
 /**
- * @object licenser
- * @method getText Returns license link
- * @method getBadge Returns badge image
- * @description
- * License badges and links are from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
- * Alternative license links at https://github.com/github/choosealicense.com/tree/gh-pages/_licenses
+ * @object helpers - helper functions to incorporate the answers to the README
+ * @method getLicenseText Returns license link
+ * @method getLicenseBadge Returns badge image
+ *                         License badges and links are from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
  * 
  */
-let licenser = {
+let helpers = {
 
-    getText: (license) => {
+    getLicenseText: (license) => {
         switch (license) {
             case "apache2":
                 return "[Apache 2.0](https://opensource.org/licenses/Apache-2.0)";
@@ -193,7 +218,7 @@ let licenser = {
                 return "error-license-link-not-found";
         }
     },
-    getBadge: (license) => {
+    getLicenseBadge: (license) => {
         switch (license) {
             case "apache2":
                 return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
