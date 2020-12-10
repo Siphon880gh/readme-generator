@@ -2,7 +2,7 @@
  * @file index.js
  * Node script
  * @require File System module
- * @require inquirer - commond line user interface so you can ask user questions and accept their inputs 
+ * @require inquirer - command line user interface so you can ask user questions and accept their inputs 
  * 
  */
 const fs = require("fs");
