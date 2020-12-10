@@ -1,7 +1,6 @@
-name
+Name
 ====
-
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 Description
 ---
@@ -10,19 +9,28 @@ desc
 Table of Contents
 ---
 - [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
 - [License](#license)
 - [Contribution](#contribution)
 - [Tests](#tests)
 - [Questions](#questions)
 
+Installation
+---
+install
+
+Usage
+---
+usage
 
 License
 ---
-[BSD3](https://opensource.org/licenses/BSD-3-Clause)
+[CC 4.0 Share Alike](https://creativecommons.org/licenses/by-sa/4.0/)
 
 Contribution
 ---
-guidelines
+contrib
 
 Tests
 ---
@@ -31,6 +39,7 @@ test
 Questions
 ---
 - Where can I see more of your repositories?
-	- Visit [user's Repositories](https://github.com/user)
+	- Visit [User's Repositories](https://github.com/User)
+
 - Where can I reach you?
-	- You can reach me with additional questions at <a href='mailto:email@email.com'>email@email.com</a>.
+	- You can reach me with additional questions at <a href='mailto:Email'>Email</a>.
