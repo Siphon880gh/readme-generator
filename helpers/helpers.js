@@ -44,7 +44,7 @@ function ifAnsweredThenAddText(answer, alternateConcatenation) {
 function addTableofContents() {
     let toc = "";
 
-    let { description, installation, usage, license, contribution, tests } = global.answers;
+    let { description, installation, demo, screenshot, usage, license, contribution, tests } = global.answers;
 
     let { githubUsername, email } = global.answers;
     let hasGithubUsername = githubUsername && githubUsername.length;
@@ -53,6 +53,10 @@ function addTableofContents() {
 
     if (description && description.length)
         toc += "- [Description](#description)\n";
+    if (demo && demo.length)
+        toc += "- [Demo](#demo)\n";
+    if (screenshot && screenshot.length)
+        toc += "- [Screenshot](#screenshot)\n";
     if (installation && installation.length)
         toc += "- [Installation](#installation)\n";
     if (usage && usage.length)

@@ -33,6 +33,14 @@ const questions = [
         message: "Enter a description if any:"
     },
     {
+        name: "demo",
+        message: "Enter demo text and [link](https://www...) if any. May type a placeholder text for later:"
+    },
+    {
+        name: "screenshot",
+        message: "Enter ![screenshot](https://www...) if any. May type a placeholder text for later:"
+    },
+    {
         name: "installation",
         message: "Enter installation instructions if any:"
     },
@@ -90,6 +98,8 @@ const generateReadMe = answers => {
         email,
 
         description,
+        demo,
+        screenshot,
         installation,
         usage,
         license,
@@ -103,6 +113,8 @@ const generateReadMe = answers => {
     text += ifAnsweredThenAddText(title, title + "\n====\n");
     text += ifAnsweredThenAddText(license, getLicenseBadge(license) + "\n\n");
     text += ifAnsweredThenAddText(description, "Description\n---\n" + description + "\n\n");
+    text += ifAnsweredThenAddText(demo, "Demo\n---\n" + demo + "\n\n");
+    text += ifAnsweredThenAddText(screenshot, "Screenshot\n---\n" + screenshot + "\n\n");
     text += addTableofContents();
     text += ifAnsweredThenAddText(installation, "Installation\n---\n" + installation + "\n\n");
     text += ifAnsweredThenAddText(usage, "Usage\n---\n" + usage + "\n\n");
