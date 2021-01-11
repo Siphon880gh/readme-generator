@@ -6,6 +6,7 @@
  * 
  */
 const fs = require("fs");
+const path = require("path");
 const inquirer = require("inquirer");
 const { ifAnsweredThenAddText, addTableofContents, ifAnsweredBasicsThenAddText, getLicenseText, getLicenseBadge } = require("./helpers/helpers.js");
 
@@ -135,7 +136,7 @@ const generateReadMe = answers => {
 
     // Show ReadMe text generated in Node JS output
     console.group("README Generator");
-    console.log(`Written to ${filename}:\n${text}`);
+    console.log(`Generating:\n\n${text}\nFinished.\n\nThe above README generated and written to:\n` + path.join(__dirname, filename) + "\n\n");
     console.groupEnd();
 
 };
