@@ -6,21 +6,30 @@
  */
 
 // Concatenate basic questions to the catch-all Questions section in ReadMe text
-function ifAnsweredBasicsThenAddText() {
+function ifAnsweredBasicsThenAddText(githubUsername, email, hireLink) {
 
-    let { githubUsername, email } = global.answers;
     let hasGithubUsername = githubUsername && githubUsername.length;
     let hasEmail = email && email.length;
+    let hasHireLink = hireLink && hireLink.length;
 
-    if (hasGithubUsername || hasEmail) {
+    if (hasGithubUsername || hasEmail || hasHireLink) {
         let concatenate = "";
         concatenate += "Questions\n---\n";
 
         if (hasGithubUsername)
             concatenate += "- Where can I see more of your repositories?\n\t- Visit [" + githubUsername + "'s Repositories](https://github.com/" + githubUsername + ")\n\n";
 
-        if (hasEmail)
-            concatenate += "- Where can I reach you?\n\t- You can reach me with additional questions at <a href='mailto:" + email + "'>" + email + "</a>.";
+        if (hasEmail || hasHireLink) {
+            concatenate += "- Where can I reach you?";
+        }
+
+        if (hasEmail) {
+            concatenate += "\n\t- You can reach me with additional questions at <a href='mailto:" + email + "'>" + email + "</a>.";
+        }
+
+        if (hasHireLink) {
+            concatenate += "\n\t- Want to [hire me](" + hireLink + ")?"
+        }
 
         return concatenate;
     } else {
@@ -44,12 +53,13 @@ function ifAnsweredThenAddText(answer, alternateConcatenation) {
 function addTableofContents() {
     let toc = "";
 
-    let { description, installation, demo, screenshot, usage, license, contribution, tests } = global.answers;
+    let { description, demo, screenshot, installation, usage, license, contribution, tests } = global.answers;
 
-    let { githubUsername, email } = global.answers;
+    let { githubUsername, email, hireLink } = global.answers;
     let hasGithubUsername = githubUsername && githubUsername.length;
     let hasEmail = email && email.length;
-    let hasQuestionDetails = hasGithubUsername || hasEmail;
+    let hasHireLink = hireLink && hireLink.length;
+    let hasQuestionDetails = hasGithubUsername || hasEmail || hasHireLink;
 
     if (description && description.length)
         toc += "- [Description](#description)\n";

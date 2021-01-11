@@ -19,13 +19,16 @@ const questions = [
     },
     {
         name: "githubUsername",
-        message: "Your Github username?"
+        message: "Your Github username if any:"
     },
     {
         name: "email",
-        message: "Your email to be reached?"
+        message: "Your email to be reached if any:"
     },
-
+    {
+        name: "hireLink",
+        message: "LinkedIn, portfolio, or hiring link if any:"
+    },
 
     // ReadMe Sections
     {
@@ -94,8 +97,8 @@ const generateReadMe = answers => {
     let {
         title,
         githubUsername,
-        githubProfileLink,
         email,
+        hireLink,
 
         description,
         demo,
@@ -121,7 +124,7 @@ const generateReadMe = answers => {
     text += ifAnsweredThenAddText(license, "License\n---\n" + getLicenseText(license) + "\n\n");
     text += ifAnsweredThenAddText(contribution, "Contribution\n---\n" + contribution + "\n\n");
     text += ifAnsweredThenAddText(tests, "Tests\n---\n" + tests + "\n\n");
-    text += ifAnsweredBasicsThenAddText();
+    text += ifAnsweredBasicsThenAddText(githubUsername, email, hireLink);
 
     // Replace multiple blank lines in generated ReadMe text from skipped questions
     // text = text.replace(/\n\n\n/gm, "\n");
