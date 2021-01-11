@@ -1,45 +1,50 @@
-Name
+Repos
 ====
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Description
 ---
-desc
+Desc
+
+Demo
+---
+Play the live [game](https://www.google.com)
+
+Screenshot
+---
+Placeholder for now
 
 Table of Contents
 ---
 - [Description](#description)
+- [Demo](#demo)
+- [Screenshot](#screenshot)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Contribution](#contribution)
 - [Tests](#tests)
 - [Questions](#questions)
 
 Installation
 ---
-install
+Install
 
 Usage
 ---
-usage
+Usage
 
 License
 ---
-[CC 4.0 Share Alike](https://creativecommons.org/licenses/by-sa/4.0/)
-
-Contribution
----
-contrib
+[MIT License](https://opensource.org/licenses/MIT)
 
 Tests
 ---
-test
+npm test
 
 Questions
 ---
 - Where can I see more of your repositories?
-	- Visit [User's Repositories](https://github.com/User)
+	- Visit [Siphon880gh's Repositories](https://github.com/Siphon880gh)
 
 - Where can I reach you?
-	- You can reach me with additional questions at <a href='mailto:Email'>Email</a>.
+	- You can reach me with additional questions at <a href='mailto:weffung@ucdavis.edu'>weffung@ucdavis.edu</a>.
