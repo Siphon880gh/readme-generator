@@ -42,7 +42,7 @@ const questions = [
     },
     {
         name: "video",
-        message: "Enter video text and [link](https://www...) if any. May type a placeholder text for later:\n\nComing soon! <!--Watch [walkthrough!](https://youtu.be/watch?v=NpEaa2P7qZI)-->\n\nYour input:"
+        message: "Enter video text and [link](https://www...) if any. May type a placeholder text for later:\n\nComing soon! <!--Watch [walkthrough!](https://youtu.be/watch?v=NpEaa2P7qZI)-->\n\?:"
     },
     {
         name: "screenshot",
@@ -62,6 +62,8 @@ const questions = [
     {
         name: "license",
         choices: [
+            new inquirer.Separator(),
+            "-- Skip --",
             new inquirer.Separator(),
             "apache2", "bsd2", "bsd3",
             new inquirer.Separator(),
@@ -95,9 +97,6 @@ global.answers = {};
  */
 const generateReadMe = answers => {
 
-    // Make answers accessible at the global scope so that helper functions can concatenate to the ReadMe text
-    global.answers = answers;
-
     // Make answers accessible at this level
     let {
         title,
@@ -116,6 +115,15 @@ const generateReadMe = answers => {
         tests
 
     } = answers;
+
+    // If license is chosen skipped, make license falsy:
+    if (license === "-- Skip --") {
+        license = null;
+        answers.license = null;
+    }
+
+    // Make answers accessible at the global scope so that helper functions can concatenate to the ReadMe text
+    global.answers = answers;
 
     // Concatenate ReadMe text based on answers or lack of
     let text = "";
