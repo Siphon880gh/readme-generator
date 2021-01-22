@@ -144,6 +144,12 @@ const generateReadMe = answers => {
     // Replace multiple blank lines in generated ReadMe text from skipped questions
     // text = text.replace(/\n\n\n/gm, "\n");
 
+    // If all questions skipped
+    if (text.length === 0) {
+        console.error("\n\nError: You skipped all questions, so there's no readme to generate.");
+        process.exit(0);
+    }
+
     // Generate ReadMe file
     const filename = "Generated-README.md";
     fs.writeFileSync(filename, text);
