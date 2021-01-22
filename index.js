@@ -41,6 +41,10 @@ const questions = [
         message: "Enter demo text and [link](https://www...) if any. May type a placeholder text for later:"
     },
     {
+        name: "video",
+        message: "Enter video text and [link](https://www...) if any. May type a placeholder text for later:\n\nComing soon! <!--Watch [walkthrough!](https://youtu.be/watch?v=NpEaa2P7qZI)-->\n\nYour input:"
+    },
+    {
         name: "screenshot",
         message: "Enter ![screenshot](https://www...) if any. May type a placeholder text for later:"
     },
@@ -103,6 +107,7 @@ const generateReadMe = answers => {
 
         description,
         demo,
+        video,
         screenshot,
         installation,
         usage,
@@ -118,6 +123,7 @@ const generateReadMe = answers => {
     text += ifAnsweredThenAddText(license, getLicenseBadge(license) + "\n\n");
     text += ifAnsweredThenAddText(description, "Description\n---\n" + description + "\n\n");
     text += ifAnsweredThenAddText(demo, "Demo\n---\n" + demo + "\n\n");
+    text += ifAnsweredThenAddText(video, "Video Walkthrough\n---\n" + video + "\n\n");
     text += ifAnsweredThenAddText(screenshot, "Screenshot\n---\n" + screenshot + "\n\n");
     text += addTableofContents();
     text += ifAnsweredThenAddText(installation, "Installation\n---\n" + installation + "\n\n");
