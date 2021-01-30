@@ -9,6 +9,7 @@ const fs = require("fs");
 const path = require("path");
 const inquirer = require("inquirer");
 const { ifAnsweredThenAddText, addTableofContents, ifAnsweredBasicsThenAddText, getLicenseText, getLicenseBadge, addReconciledBadges } = require("./helpers/helpers.js");
+const chalk = require("chalk");
 
 // Questions to ask the README generator user
 const questions = [
@@ -16,49 +17,49 @@ const questions = [
     // Basic Questions
     {
         name: "title",
-        message: "\x1b[33mName of your repository?\x1b[0m"
+        message: chalk.bgGreen("Name of your repository?")
     },
     {
         name: "githubUsername",
-        message: "Your Github username if any:"
+        message: chalk.yellow("Your Github username if any:")
     },
     {
         name: "email",
-        message: "Your email to be reached if any:"
+        message: chalk.yellow("Your email to be reached if any:")
     },
     {
         name: "hireLink",
-        message: "LinkedIn, portfolio, or hiring link if any:"
+        message: chalk.yellow("LinkedIn, portfolio, or hiring link if any:")
     },
 
     // ReadMe Sections
     {
         name: "badges",
-        message: "Enter badge(s) Markdown code or Html to point to your other works, portfolio, and funding links if any. Will appear at the top (Read shields.io for more info, Recommend saving your snippet of badges for future use):"
+        message: chalk.gray("If any, enter BADGE / BADGES code (markdown or html) for stats, showcasing other works, portfolio, and funding links (shields.io for more info):")
     },
     {
         name: "description",
-        message: "Enter a description if any:"
+        message: chalk.bgGreen("Enter a description:")
     },
     {
         name: "demo",
-        message: "Enter demo text and [link](https://www...) if any. May type a placeholder text for later:"
+        message: chalk.gray("If any, enter LIVE DEMO code, eg. [link](https://www...). May type a placeholder text for later:")
     },
     {
         name: "video",
-        message: "Enter video text and [link](https://www...) if any. May type a placeholder text for later:\n\nComing soon! <!--Watch [walkthrough!](https://youtu.be/watch?v=NpEaa2P7qZI)-->\n\?:"
+        message: chalk.gray("If any, enter VIDEO code, eg. [link](https://www...). May type a placeholder text for later, such as a coming soon display:\n\tComing soon! <!--Watch [walkthrough!](https://youtu.be/watch?v=NpEaa2P7qZI)-->\n\?:")
     },
     {
         name: "screenshot",
-        message: "Enter ![screenshot](https://www...) if any. May type a placeholder text for later:"
+        message: chalk.gray("If any, enter SCREENSHOT code, eg. ![screenshot](https://www...). May type a placeholder text for later:")
     },
     {
         name: "installation",
-        message: "Enter installation instructions if any:"
+        message: chalk.green.italic("Enter installation instructions if any:")
     },
     {
         name: "usage",
-        message: "Enter usage information if any:"
+        message: chalk.green.italic("Enter usage information if any:")
     },
 
     // License question
@@ -81,11 +82,11 @@ const questions = [
     },
     {
         name: "contribution",
-        message: "Enter contribution guidelines if any:"
+        message: chalk.green.italic("Enter contribution guidelines if any:")
     },
     {
         name: "tests",
-        message: "Enter test instructions if any:"
+        message: chalk.green.italic("Enter test instructions if any:")
     }
 ];
 
