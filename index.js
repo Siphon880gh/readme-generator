@@ -8,7 +8,7 @@
 const fs = require("fs");
 const path = require("path");
 const inquirer = require("inquirer");
-const { ifAnsweredThenAddText, addTableofContents, ifAnsweredBasicsThenAddText, getLicenseText, getLicenseBadge } = require("./helpers/helpers.js");
+const { ifAnsweredThenAddText, addTableofContents, ifAnsweredBasicsThenAddText, getLicenseText, getLicenseBadge, addReconciledBadges } = require("./helpers/helpers.js");
 
 // Questions to ask the README generator user
 const questions = [
@@ -16,7 +16,7 @@ const questions = [
     // Basic Questions
     {
         name: "title",
-        message: "Name of your repository?"
+        message: "\x1b[33mName of your repository?\x1b[0m"
     },
     {
         name: "githubUsername",
@@ -32,6 +32,10 @@ const questions = [
     },
 
     // ReadMe Sections
+    {
+        name: "badges",
+        message: "Enter badge(s) Markdown code or Html to point to your other works, portfolio, and funding links if any. Will appear at the top (Read shields.io for more info, Recommend saving your snippet of badges for future use):"
+    },
     {
         name: "description",
         message: "Enter a description if any:"
@@ -104,6 +108,7 @@ const generateReadMe = answers => {
         email,
         hireLink,
 
+        badges,
         description,
         demo,
         video,
@@ -128,7 +133,7 @@ const generateReadMe = answers => {
     // Concatenate ReadMe text based on answers or lack of
     let text = "";
     text += ifAnsweredThenAddText(title, title + "\n====\n");
-    text += ifAnsweredThenAddText(license, getLicenseBadge(license) + "\n\n");
+    text += addReconciledBadges(license, badges);
     text += ifAnsweredThenAddText(description, "Description\n---\n" + description + "\n\n");
     text += ifAnsweredThenAddText(demo, "Demo\n---\n" + demo + "\n\n");
     text += ifAnsweredThenAddText(video, "Video Walkthrough\n---\n" + video + "\n\n");

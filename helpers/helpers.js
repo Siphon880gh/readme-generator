@@ -90,6 +90,19 @@ function addTableofContents() {
     }
 } // addTableofContents
 
+// combine license and/or your brand's badges
+function addReconciledBadges(license, badges) {
+    let concatenate = "";
+    if (license && license.length && badges && badges.length) {
+        concatenate = getLicenseBadge(license) + " " + badges + "\n\n";
+    } else if (license && license.length) {
+        concatenate = getLicenseBadge(license) + "\n\n";
+    } else if (badges && badges.length) {
+        concatenate = badges + "\n\n";
+    }
+    return concatenate;
+}
+
 // get license link for license section
 function getLicenseText(license) {
     switch (license) {
@@ -192,4 +205,4 @@ function getLicenseBadge(license) {
     }
 } // getLicenseBadge
 
-module.exports = { ifAnsweredThenAddText, addTableofContents, ifAnsweredBasicsThenAddText, getLicenseText, getLicenseBadge }
+module.exports = { ifAnsweredThenAddText, addTableofContents, ifAnsweredBasicsThenAddText, getLicenseText, getLicenseBadge, addReconciledBadges }
