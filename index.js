@@ -21,7 +21,7 @@ const questions = [
     },
     {
         name: "githubUsername",
-        message: chalk.yellow("Your Github username if any:")
+        message: chalk.yellow("Your Github username if any (Will form repository link):")
     },
     {
         name: "email",
