@@ -17,7 +17,7 @@ const questions = [
     // Basic Questions
     {
         name: "title",
-        message: chalk.bgGreen("Name of your repository?")
+        message: chalk.bgGreen("Name of your repository (ReadMe title)?")
     },
     {
         name: "githubUsername",
