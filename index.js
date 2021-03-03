@@ -17,11 +17,11 @@ const questions = [
     // Basic Questions
     {
         name: "title",
-        message: chalk.bgGreen("Name of your repository (ReadMe title)?")
+        message: chalk.bgGreen("Name of your repository (Will create ReadMe title)?")
     },
     {
         name: "githubUsername",
-        message: chalk.yellow("Your Github username if any (Will form repository link):")
+        message: chalk.yellow("Your Github username if any (Will create repository link):")
     },
     {
         name: "email",
